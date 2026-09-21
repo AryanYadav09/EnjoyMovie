@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #090A0E;
+    color: #CBD5E1;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    color: #F8FAFC;
+    letter-spacing: -0.02em;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090A0E;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1D2230;
+    border-radius: 4px;
+    border: 2px solid #090A0E;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #F59E0B;
+  }
+}
+
+@layer utilities {
+  /* Tier 1 Surface Glass */
+  .glass-surface {
+    background-color: rgba(22, 26, 36, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Tier 2 Elevated Glass */
+  .glass-elevated {
+    background-color: rgba(29, 34, 48, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.75);
+  }
+
+  /* Cinematic Card Gradient */
+  .poster-overlay {
+    background: linear-gradient(to top, rgba(9, 10, 14, 0.95) 0%, rgba(9, 10, 14, 0.4) 60%, transparent 100%);
+  }
+
+  /* Hero Backdrop Gradient */
+  .hero-overlay {
+    background: linear-gradient(to top, #090A0E 0%, #090A0E 25%, rgba(9, 10, 14, 0.75) 65%, rgba(9, 10, 14, 0.4) 100%);
+  }
+
+  /* Tabular Numerals for Consistent Rating Numbers */
+  .tnum {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+    font-variant-numeric: tabular-nums;
+  }
+}
