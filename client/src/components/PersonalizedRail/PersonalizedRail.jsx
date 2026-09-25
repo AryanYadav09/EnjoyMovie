@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Sparkles, Cpu, RotateCcw, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Film, RotateCcw, ChevronLeft, ChevronRight } from 'lucide-react';
 import { movieApi } from '../../services/api';
 import { useActivity } from '../../context/ActivityContext';
 import { MovieCard } from '../MovieCard/MovieCard';
@@ -59,17 +59,17 @@ export function PersonalizedRail({ onWatchTrailer }) {
         <div>
           <div className="flex items-center gap-2 mb-1.5">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-accent/20 border border-amber-accent/40 text-[11px] font-bold text-amber-accent uppercase tracking-wider">
-              <Sparkles className="w-3 h-3 fill-current" />
-              <span>Smart AI Match</span>
+              <Film className="w-3 h-3 text-amber-accent" />
+              <span>Curated For You</span>
             </span>
 
             {tasteProfile.totalInteractions > 0 ? (
               <span className="text-[11px] text-cinema-muted font-medium">
-                Learned from {tasteProfile.totalInteractions} {tasteProfile.totalInteractions === 1 ? 'interaction' : 'interactions'}
+                Based on your viewing preferences
               </span>
             ) : (
               <span className="text-[11px] text-cinema-muted font-medium">
-                Click, search, or view movies to tune this AI engine
+                Personalized picks based on your activity
               </span>
             )}
           </div>
@@ -88,10 +88,10 @@ export function PersonalizedRail({ onWatchTrailer }) {
             <button
               onClick={resetTasteProfile}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-2 hover:bg-surface-3 border border-cinema-stroke text-[11px] font-medium text-cinema-muted hover:text-cinema-heading transition-colors mr-2"
-              title="Reset learned taste profile"
+              title="Reset preferences"
             >
               <RotateCcw className="w-3 h-3" />
-              <span>Reset AI Taste</span>
+              <span>Reset Preferences</span>
             </button>
           )}
 

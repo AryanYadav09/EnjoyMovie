@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Sparkles, X, ArrowRight } from 'lucide-react';
+import { Search, SlidersHorizontal, X, ArrowRight } from 'lucide-react';
 
 export function SearchBar({
   initialValue = '',
@@ -64,15 +64,15 @@ export function SearchBar({
           <button
             type="button"
             onClick={() => setIsNlp(!isNlp)}
-            title={isNlp ? "Natural language discovery enabled" : "Standard keyword search"}
-            className={`hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold border transition-all ${
+            title={isNlp ? "Smart search filters enabled" : "Standard keyword search"}
+            className={`hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold border transition-all ${
               isNlp
                 ? 'bg-amber-accent/15 text-amber-accent border-amber-accent/40 shadow-sm'
                 : 'bg-white/5 text-cinema-muted border-white/10 hover:text-cinema-body'
             }`}
           >
-            <Sparkles className={`w-3 h-3 ${isNlp ? 'fill-current' : ''}`} />
-            <span>AI Filter</span>
+            <SlidersHorizontal className="w-3 h-3" />
+            <span>Smart Filters</span>
           </button>
 
           {/* Submit Button */}

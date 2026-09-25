@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { Sparkles, Search as SearchIcon, Filter, X, CheckCheck } from 'lucide-react';
+import { Search as SearchIcon, Filter, X, CheckCheck, SlidersHorizontal } from 'lucide-react';
 import { movieApi } from '../services/api';
 import { useActivity } from '../context/ActivityContext';
 import { SearchBar } from '../components/SearchBar/SearchBar';
@@ -87,12 +87,12 @@ export function Search({ onWatchTrailer }) {
         <SearchBar initialValue={rawQuery} isNlpDefault={isNlp} />
       </div>
 
-      {/* Interpreted AI Filter Chips */}
+      {/* Interpreted Filter Chips */}
       {parsedFilters && (parsedFilters.genres?.length > 0 || parsedFilters.minRating || parsedFilters.fromYear) && (
         <div className="p-4 rounded-xl glass-surface border border-amber-accent/30 max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-amber-accent" />
-            <span className="text-xs font-semibold text-cinema-heading">Interpreted Natural Language Filters:</span>
+            <SlidersHorizontal className="w-4 h-4 text-amber-accent" />
+            <span className="text-xs font-semibold text-cinema-heading">Active Filters:</span>
           </div>
 
           <div className="flex flex-wrap items-center gap-1.5">
@@ -120,25 +120,22 @@ export function Search({ onWatchTrailer }) {
         </div>
       )}
 
-      {/* AI Typo Auto-Correction Banner */}
+      {/* Typo Auto-Correction Banner */}
       {searchMeta.isAutoCorrected && (
         <div className="p-4 rounded-xl bg-amber-accent/15 border border-amber-accent/40 max-w-4xl mx-auto flex items-center justify-between gap-3 text-xs text-amber-accent shadow-cinema-glow">
           <div className="flex items-center gap-2.5">
-            <Sparkles className="w-4 h-4 text-amber-accent flex-shrink-0" />
+            <SearchIcon className="w-4 h-4 text-amber-accent flex-shrink-0" />
             <span>
               Showing results for <strong className="text-cinema-heading font-bold text-sm">{searchMeta.didYouMean || searchMeta.usedQuery}</strong> (auto-corrected from <em>"{searchMeta.originalQuery}"</em>)
             </span>
           </div>
-          <span className="text-[11px] text-cinema-muted hidden sm:inline">
-            AI Typo Correction
-          </span>
         </div>
       )}
 
       {/* "Did You Mean" Suggestion Chip (when not auto-corrected) */}
       {!searchMeta.isAutoCorrected && searchMeta.didYouMean && searchMeta.didYouMean.toLowerCase() !== rawQuery.toLowerCase() && (
         <div className="p-3.5 rounded-xl bg-surface-2 border border-cinema-stroke max-w-4xl mx-auto flex items-center gap-2.5 text-xs text-cinema-body">
-          <Sparkles className="w-4 h-4 text-cyan-vivid flex-shrink-0" />
+          <SearchIcon className="w-4 h-4 text-cyan-vivid flex-shrink-0" />
           <span>Did you mean:</span>
           <Link
             to={`/search?q=${encodeURIComponent(searchMeta.didYouMean)}&nlp=false`}

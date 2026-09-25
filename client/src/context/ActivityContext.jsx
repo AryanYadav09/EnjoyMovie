@@ -154,7 +154,7 @@ export function ActivityProvider({ children }) {
   }, [tasteProfile.genreWeights]);
 
   /**
-   * Clear taste profile & reset AI history
+   * Clear taste profile & reset viewing history
    */
   const resetTasteProfile = useCallback(() => {
     setTasteProfile(INITIAL_PROFILE);

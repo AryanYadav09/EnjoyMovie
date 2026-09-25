@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Sparkles, Compass, Flame, Film, ArrowRight, Key } from 'lucide-react';
+import { Sparkles, Compass, Flame, Film, ArrowRight } from 'lucide-react';
 import { movieApi } from '../services/api';
 import { SearchBar } from '../components/SearchBar/SearchBar';
 import { MovieCarousel } from '../components/MovieCarousel/MovieCarousel';
@@ -87,8 +87,8 @@ export function Home({ onOpenQuiz, onOpenApiKeyModal, onWatchTrailer }) {
         {/* Hero Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center py-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-2/80 border border-cinema-stroke text-amber-accent text-xs font-semibold uppercase tracking-wider mb-6 backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5 fill-current" />
-            <span>AI-Powered Cinephile Engine</span>
+            <Film className="w-3.5 h-3.5 text-amber-accent" />
+            <span>Curated Movie Discovery</span>
           </div>
 
           <h1 className="font-outfit text-4xl sm:text-5xl md:text-6xl font-extrabold text-cinema-heading leading-tight tracking-tight mb-4">
@@ -124,35 +124,8 @@ export function Home({ onOpenQuiz, onOpenApiKeyModal, onWatchTrailer }) {
           </div>
         </div>
       </section>
-
       {/* Main Content Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20 space-y-8">
-        {/* Offline Curated Mode Notice Banner */}
-        {!isLiveConnected && (
-          <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-surface-2 to-surface-3 border border-amber-accent/30 shadow-cinema-card flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-accent/20 border border-amber-accent/40 flex items-center justify-center flex-shrink-0">
-                <Key className="w-5 h-5 text-amber-accent" />
-              </div>
-              <div>
-                <h3 className="font-outfit font-bold text-sm text-cinema-heading flex items-center gap-2">
-                  <span>Currently Browsing Offline Curated Collection (55 Iconic Films)</span>
-                </h3>
-                <p className="text-xs text-cinema-muted mt-0.5">
-                  Want live access to over 800,000+ movies, daily box office charts, and live actor filmographies? Connect your free TMDB API key in 1-click.
-                </p>
-              </div>
-            </div>
-            <button
-              onClick={onOpenApiKeyModal}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-accent text-canvas text-xs font-bold hover:bg-amber-deep shadow-cinema-glow transition-all whitespace-nowrap"
-            >
-              <span>Connect Free TMDB Key</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        )}
-        {/* 2. Quick Genre Chips */}
         <section className="p-4 rounded-2xl glass-surface overflow-x-auto scrollbar-none">
           <div className="flex items-center justify-between gap-2 min-w-max">
             <span className="text-xs font-bold uppercase tracking-wider text-cinema-muted mr-2">
@@ -171,7 +144,7 @@ export function Home({ onOpenQuiz, onOpenApiKeyModal, onWatchTrailer }) {
           </div>
         </section>
 
-        {/* 3. AI Personalized Recommendations Rail */}
+        {/* 3. Personalized Recommendations Rail */}
         <PersonalizedRail onWatchTrailer={onWatchTrailer} />
 
         {/* Error Callout if applicable */}

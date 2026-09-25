@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { Search, Bookmark, Sparkles, Menu, X, Film, Key, Database } from 'lucide-react';
+import { Search, Bookmark, Sparkles, Menu, X, Film } from 'lucide-react';
 import { useWatchlist } from '../../context/WatchlistContext';
 import { movieApi } from '../../services/api';
 
@@ -80,28 +80,6 @@ export function Navbar({ onOpenQuiz, onOpenApiKeyModal }) {
 
         {/* Right CTA Actions */}
         <div className="flex items-center gap-2">
-          {/* TMDB Live Connection Status Chip */}
-          <button
-            onClick={onOpenApiKeyModal}
-            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border transition-all ${
-              isLiveConnected
-                ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
-                : 'bg-amber-accent/15 text-amber-accent border-amber-accent/40 shadow-cinema-glow hover:bg-amber-accent/25'
-            }`}
-            title="Configure TMDB API key to search 800,000+ movies"
-          >
-            {isLiveConnected ? (
-              <>
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Live TMDB (800K+)</span>
-              </>
-            ) : (
-              <>
-                <Key className="w-3 h-3 text-amber-accent" />
-                <span>Connect Live TMDB</span>
-              </>
-            )}
-          </button>
 
           {/* Quick Search Toggle */}
           {navSearchOpen ? (
@@ -185,17 +163,7 @@ export function Navbar({ onOpenQuiz, onOpenApiKeyModal }) {
             </Link>
           ))}
 
-          <div className="pt-2 border-t border-cinema-stroke space-y-2">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                if (onOpenApiKeyModal) onOpenApiKeyModal();
-              }}
-              className="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-surface-2 border border-amber-accent/40 text-amber-accent text-xs font-semibold"
-            >
-              <Key className="w-3.5 h-3.5" />
-              <span>{isLiveConnected ? 'TMDB API Configured (Active)' : 'Connect Live TMDB (800K+ Movies)'}</span>
-            </button>
+          <div className="pt-2 border-t border-cinema-stroke">
 
             <button
               onClick={() => {
