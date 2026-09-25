@@ -1,5 +1,5 @@
 /**
- * Fuzzy Search & Typo-Tolerance Service for MovieFinder
+ * Fuzzy Search & Typo-Tolerance Service for EnjoyMovie
  * 
  * Provides Damerau-Levenshtein distance, token-level typo correction,
  * phonetic matching, and a comprehensive cinephile vocabulary of popular movies,

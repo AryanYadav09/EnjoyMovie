@@ -1,4 +1,4 @@
-# 🎬 MovieFinder — Movie Discovery & Recommendation Web App
+# 🎬 EnjoyMovie — Movie Discovery & Recommendation Web App
 
 A production-ready, dark cinematic movie discovery platform built with **React.js + Tailwind CSS** on the frontend and **Node.js + Express.js** on the backend. Designed using the **Cinematic Luxe** design system created in Stitch.
 
@@ -185,7 +185,7 @@ npm start
 
 Raw ratings can be misleading: an obscure title with a single 10/10 rating should not outrank a critically acclaimed film with an 8.7 rating backed by 500,000 votes.
 
-MovieFinder calculates a balanced `qualityScore`:
+EnjoyMovie calculates a balanced `qualityScore`:
 $$WR = \left(\frac{v}{v + m}\right) \cdot R + \left(\frac{m}{v + m}\right) \cdot C + \text{Bonus}_{\text{pop}} + \text{Bonus}_{\text{recency}}$$
 
 Where:

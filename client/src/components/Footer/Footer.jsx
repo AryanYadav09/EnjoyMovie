@@ -14,7 +14,7 @@ export function Footer() {
                 <Film className="w-4 h-4 text-amber-accent" />
               </div>
               <span className="font-outfit font-bold text-base text-cinema-heading">
-                Movie<span className="text-amber-accent">Finder</span>
+                Enjoy<span className="text-amber-accent">Movie</span>
               </span>
             </div>
             <p className="text-xs text-cinema-muted leading-relaxed max-w-sm mb-4">
@@ -72,7 +72,7 @@ export function Footer() {
             This product uses the TMDB and OMDb APIs but is not endorsed or certified by TMDB or IMDb.
           </p>
           <p>
-            © {new Date().getFullYear()} MovieFinder. Designed for film lovers.
+            © {new Date().getFullYear()} EnjoyMovie. Designed for film lovers.
           </p>
         </div>
       </div>

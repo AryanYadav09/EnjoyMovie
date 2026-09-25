@@ -48,7 +48,7 @@ export function Navbar({ onOpenQuiz, onOpenApiKeyModal }) {
           </div>
           <div className="flex flex-col">
             <span className="font-outfit font-extrabold text-lg text-cinema-heading tracking-tight flex items-center gap-1">
-              Movie<span className="text-amber-accent">Finder</span>
+              Enjoy<span className="text-amber-accent">Movie</span>
             </span>
           </div>
         </Link>

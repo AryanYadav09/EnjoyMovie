@@ -11,7 +11,7 @@ export function About() {
           <span>Product Standards & Attribution</span>
         </div>
         <h1 className="font-outfit text-3xl sm:text-4xl font-extrabold text-cinema-heading">
-          About MovieFinder
+          About EnjoyMovie
         </h1>
         <p className="text-sm sm:text-base text-cinema-muted max-w-xl mx-auto">
           Crafted to answer a single question: "What should I watch tonight?" with authoritative metrics and cinematic curation.
@@ -79,7 +79,7 @@ export function About() {
           Raw average ratings can easily deceive: an obscure film with a single 10/10 vote should never outrank a cinematic masterpiece with an 8.7 rating backed by 500,000 votes.
         </p>
         <p className="text-xs sm:text-sm text-cinema-body leading-relaxed">
-          MovieFinder utilizes a Bayesian weighted rating algorithm with a credibility threshold of 1,000 votes, incorporating logarithmic popularity and subtle recency factors to deliver dependable, high-yield recommendations.
+          EnjoyMovie utilizes a Bayesian weighted rating algorithm with a credibility threshold of 1,000 votes, incorporating logarithmic popularity and subtle recency factors to deliver dependable, high-yield recommendations.
         </p>
       </div>
     </div>
